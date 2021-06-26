@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'get_objects.apps.GetObjectsConfig',
+    'user_score.apps.UserScoreConfig', 
 ]
 
 MIDDLEWARE = [
