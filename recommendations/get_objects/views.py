@@ -6,6 +6,7 @@ from recommendations.settings import BASE_DIR
 import os 
 import base64
 from PIL import Image
+import json
 
 # Create your views here.
 def get_object_info(request):
@@ -15,6 +16,4 @@ def get_object_info(request):
     with open(image_path, "rb") as image_file:
         image_data = base64.b64encode(image_file.read()).decode('utf-8')
 
-    ctx["image"] = image_data
-
-    return render(request, 'index.html', ctx)
+    return HttpResponse(json.dumps({"some data": "some data"}))
