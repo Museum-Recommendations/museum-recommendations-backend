@@ -28,7 +28,7 @@ def get_next_object(request):
     
     source_review = request.POST
     
-    exhibit = MuseumObject.objects.get(pk=request.POST["object_id"])
+    exhibit = MuseumObject.objects.get(inventory_num=request.POST["object_num"])
     user = User.objects.get(username=source_review["username"])
     review = UserReview(user = user,
             reviewed_object = exhibit,
@@ -41,7 +41,7 @@ def get_next_object(request):
     ###########################################################
     # use ml to find out the next exhibit id 
     ###########################################################
-    dummy_id = 1
+    dummy_num = 1
 
 
     # next_exhibit = MuseumObject.objects.get(pk=dummy_id)
